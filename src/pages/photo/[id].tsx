@@ -31,12 +31,16 @@ const PhotoPage = ({ photo, film }: { photo: Photo; film: Film }) => {
       <Head>
         <title>
           {film.symbol} – № {Number(photo.filmIndex) + 1} of{' '}
-          {parseFloat(ethers.utils.formatEther(film.totalSupply))}
+          {parseFloat(
+            ethers.utils.formatEther(film.totalSupply)
+          ).toLocaleString()}
         </title>
         <meta
           name="twitter:title"
           content={`${film.symbol} – № ${Number(photo.filmIndex) + 1} of 
-          ${parseFloat(ethers.utils.formatEther(film.totalSupply))}`}
+          ${parseFloat(
+            ethers.utils.formatEther(film.totalSupply)
+          ).toLocaleString()}`}
         />
         <meta
           name="twitter:description"
