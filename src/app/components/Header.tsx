@@ -27,7 +27,7 @@ const Header = () => {
           }
         }
         @media (max-width: 480px) {
-          .header {
+          .logo {
             display: none;
           }
         }

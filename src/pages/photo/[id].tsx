@@ -196,6 +196,7 @@ const PhotoPage = ({ photo, film }: { photo: Photo; film: Film }) => {
         .footer {
           text-align: center;
           margin-top: 40px;
+          margin-bottom: 40px;
           color: #aaa;
         }
         .footer a {
@@ -220,6 +221,16 @@ const PhotoPage = ({ photo, film }: { photo: Photo; film: Film }) => {
             flex-direction: column;
             align-items: flex-start;
             margin: 10px 10px;
+          }
+          .button {
+            font-size: 14px;
+          }
+          .info {
+            margin: 20px;
+            font-size: 14px;
+          }
+          .footer {
+            font-size: 14px;
           }
         }
       `}</style>

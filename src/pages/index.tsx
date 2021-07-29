@@ -65,6 +65,15 @@ const IndexPage = () => {
         .footer a {
           color: #ddd;
         }
+        @media (max-width: 480px) {
+          .logo {
+            width: 150px;
+          }
+          .info {
+            margin: 20px;
+            font-size: 14px;
+          }
+        }
       `}</style>
       <style jsx global>{`
         header {
