@@ -10,7 +10,10 @@ const IndexPage = () => {
           name="twitter:description"
           content={`Cam is in private beta with a small group of users. For updates and access follow @InternetCamera.`}
         />
-        <meta name="twitter:image" content="/static/twitter-card.png" />
+        <meta
+          name="twitter:image"
+          content="https://cam.internet.camera/static/twitter-card.png"
+        />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
       <div className="spacer" />
