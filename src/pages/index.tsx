@@ -5,7 +5,10 @@ const IndexPage = () => {
   return (
     <div className="index">
       <Head>
-        <meta name="twitter:title" content={`Cam - the NFT Camera app`} />
+        <meta
+          name="twitter:title"
+          content={`Cam - the social NFT Camera app`}
+        />
         <meta
           name="twitter:description"
           content={`Cam is in private beta with a small group of users. For updates and access follow @InternetCamera.`}
