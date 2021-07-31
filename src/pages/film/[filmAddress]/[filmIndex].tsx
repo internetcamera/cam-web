@@ -12,8 +12,10 @@ import Link from 'next/link';
 
 export const getStaticProps: GetStaticProps = async ctx => {
   const camera = new InternetCamera();
-  const photo = await camera.getPhoto(ctx.params?.id as string);
-  const film = await camera.getFilm(photo.film.id);
+  const film = await camera.getFilm(ctx.params?.filmAddress as string);
+  const photo = film.photos.find(
+    photo => photo.filmIndex == parseInt(ctx.params?.filmIndex as string)
+  );
   film.photos = [];
   film.wallets = [];
   return { props: { photo, film }, revalidate: 60 };
@@ -61,7 +63,7 @@ const PhotoPage = ({ photo, film }: { photo: Photo; film: Film }) => {
       </Head>
       <div className="names">
         <div className="name">
-          <FilmIcon size={22} /> {photo.film.symbol}
+          <FilmIcon size={22} /> {film.symbol}
         </div>
         <div className="name">
           № {Number(photo.filmIndex) + 1} of{' '}
