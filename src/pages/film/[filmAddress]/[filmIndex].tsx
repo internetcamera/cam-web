@@ -3,14 +3,13 @@ import { ethers } from 'ethers';
 import Head from 'next/head';
 import dayjs from 'dayjs';
 import FilmIcon from '@app/components/FilmIcon';
-import { GetStaticPaths, GetStaticProps } from 'next';
+import { GetServerSideProps } from 'next';
 import { InternetCamera, InternetCameraAddresses } from '@internetcamera/sdk';
 import { Film, Photo } from '@internetcamera/sdk/dist/types';
-import { useRouter } from 'next/dist/client/router';
 import ENSNameOrAddress from '@app/components/ENSNameOrAddress';
 import Link from 'next/link';
 
-export const getStaticProps: GetStaticProps = async ctx => {
+export const getServerSideProps: GetServerSideProps = async ctx => {
   const camera = new InternetCamera();
   const film = await camera.getFilm(ctx.params?.filmAddress as string);
   const photo = film.photos.find(
@@ -18,16 +17,10 @@ export const getStaticProps: GetStaticProps = async ctx => {
   );
   film.photos = [];
   film.wallets = [];
-  return { props: { photo, film }, revalidate: 60 };
-};
-
-export const getStaticPaths: GetStaticPaths = async ctx => {
-  return { paths: [], fallback: true };
+  return { props: { photo, film } };
 };
 
 const PhotoPage = ({ photo, film }: { photo: Photo; film: Film }) => {
-  const { isFallback } = useRouter();
-  if (isFallback) return null;
   return (
     <div className="photo-page">
       <Head>
