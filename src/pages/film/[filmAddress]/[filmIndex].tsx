@@ -54,10 +54,10 @@ const PhotoPage = ({ photo, film }: { photo: Photo; film: Film }) => {
         />
         <meta
           name="twitter:image"
-          content={photo.image.replace(
+          content={`${photo.image.replace(
             'ipfs://',
             process.env.NEXT_PUBLIC_IPFS_GATEWAY as string
-          )}
+          )}?aspect_ratio=1200:630`}
         />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>

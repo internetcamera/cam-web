@@ -6,7 +6,7 @@ const MainLayout = ({ children }: { children: ReactNode }) => {
   return (
     <>
       <Head>
-        <title>CAM - the social NFT camera app</title>
+        <title>Cam - the social NFT camera app</title>
         <link rel="icon" type="image/png" href="/static/icon.png" />
       </Head>
       <Header />
