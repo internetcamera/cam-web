@@ -50,7 +50,7 @@ const PhotoPage = ({ photo, film }: { photo: Photo; film: Film }) => {
           content={`${photo.image.replace(
             'ipfs://',
             process.env.NEXT_PUBLIC_IPFS_GATEWAY as string
-          )}?aspect_ratio=1200:630`}
+          )}.jpg?aspect_ratio=1200:630`}
         />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
@@ -64,10 +64,10 @@ const PhotoPage = ({ photo, film }: { photo: Photo; film: Film }) => {
         </div>
       </div>
       <img
-        src={photo.image.replace(
+        src={`${photo.image.replace(
           'ipfs://',
           process.env.NEXT_PUBLIC_IPFS_GATEWAY as string
-        )}
+        )}.jpg`}
         width={photo.width}
         height={photo.height}
       />
